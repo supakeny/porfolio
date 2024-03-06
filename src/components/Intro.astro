@@ -1,0 +1,20 @@
+---
+import Image from 'astro/components/Image.astro';
+import MaxWidthWrapper from "./MaxWidthWrapper.astro";
+import TypeAnimation from "./TypeAnimation";
+---
+
+<MaxWidthWrapper
+  className="z-20 flex flex-col justify-around items-center h-full p-6 md:py-0 md:flex-row"
+>
+  <Image loading='eager' src="/home-4.png" width="400" height="400" alt="Simulador de kennedy" />
+
+  <div class="flex flex-col justify-center max-w-md">
+    <h1
+      class="mb-5 text-2xl leading-tight text-center md:text-left dark:text-neutral-200 text-gray-900"
+    >
+      ¿Has Soñado con tú sitio web?
+    </h1>
+    <TypeAnimation client:load />
+  </div>
+</MaxWidthWrapper>

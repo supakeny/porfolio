@@ -1,0 +1,59 @@
+---
+import BgColor from "../components/BgColor.astro";
+import StepCard from '../components/StepCard.astro';
+import Intro from '../components/Intro.astro';
+---
+
+<BgColor>
+  <div class="w-full mt-16">
+    <Intro />
+
+    <div class="mx-auto max-w-5xl">
+      <div class="mt-4 sm:mt-8 mb-6 px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl sm:text-center">
+          <h2
+            class="font-bold text-4xl text-gray-900 sm:text-5xl dark:text-gray-200"
+          >
+            Los pilares de mi enfoque
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+            Forjando experiencias digitales duraderas a través del tiempo.
+          </p>
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-6xl px-6 mb-6 lg:px-8">
+        <div class="flow-root">
+          <ol class="space-y-4 md:flex md:space-x-12 md:space-y-0">
+            <li class="md:flex-1">
+              <StepCard title="Planificación" step="Step 1">
+                Mi enfoque no es meramente implementación técnica, sino
+                construir <span
+                  class=" text-blue-600 dark:text-blue-500 font-medium"
+                  >bases sólidas</span
+                > que perduren en el tiempo.
+              </StepCard>
+            </li>
+            <li class="md:flex-1">
+              <StepCard title="Diseño" step="Step 2">
+                Estoy aquí para ofrecerte <span
+                  class=" text-blue-600 dark:text-blue-500 font-medium"
+                  >soluciones que destaquen</span
+                > y generen un impacto duradero en tu audiencia.
+              </StepCard>
+            </li>
+            <li class="md:flex-1">
+              <StepCard title="Desarrollo" step="Step 3">
+                Más allá de solo escribir código, estoy comprometido a
+                comprender tus <span
+                  class=" text-blue-600 dark:text-blue-500 font-medium"
+                  >necesidades y objetivos</span
+                >.
+              </StepCard>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</BgColor>

@@ -1,0 +1,15 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [
+    "./.eslintrc.cjs",
+    "./tailwind.config.mjs",
+    "./astro.config.mjs",
+    "env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "src/components/TypeAnimation.tsx"  ],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
+}

@@ -1,0 +1,28 @@
+---
+interface Props {
+  step: string;
+  title: string;
+}
+
+const { step, title } = Astro.props;
+---
+
+<div
+  class="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4"
+>
+  <span
+    class="text-md font-medium text-amber-400 dark:text-amber-300 tracking-wide"
+  >
+    {step}
+  </span>
+  <div
+    class="-m-2 rounded-xl flex flex-col bg-gray-900/5 dark:bg-gray-900 dark:border dark:border-zinc-300 p-2 ring-1 ring-inset ring-gray-900/10 dark:ring-gray-900/5 lg:-m-4 lg:rounded-2xl lg:p-4"
+  >
+    <span class="text-xl font-semibold dark:text-white">
+      {title}
+    </span>
+    <span class="mt-2 text-zinc-700 dark:text-zinc-200/90 tracking-widest">
+      <slot />
+    </span>
+  </div>
+</div>
