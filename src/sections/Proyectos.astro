@@ -1,15 +1,136 @@
 ---
+import Express from "../components/icons/Express.astro";
+import JWT from "../components/icons/JWT.astro";
+import Material from "../components/icons/Material.astro";
+import Node from "../components/icons/Node.astro";
+import React from "../components/icons/React.astro";
+import SWR from "../components/icons/SWR.astro";
+import Sequelize from "../components/icons/Sequelize.astro";
+import Vite from "../components/icons/Vite.astro";
+
+const TAGS = {
+  EXPRESS: {
+    name: "Express",
+    class: "bg-blue-600 text-white",
+    icon: Express,
+  },
+  JWT: {
+    name: "JWT",
+    class: "bg-blue-600 text-white",
+    icon: JWT,
+  },
+  MATERIAL: {
+    name: "Material UI",
+    class: "bg-blue-600 text-white",
+    icon: Material,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-blue-600 text-white",
+    icon: Node,
+  },
+  React: {
+    name: "React",
+    class: "bg-blue-600 text-white",
+    icon: React,
+  },
+  Sequelize: {
+    name: "Sequelize",
+    class: "bg-blue-600 text-white",
+    icon: Sequelize,
+  },
+  SWR: {
+    name: "SWR",
+    class: "bg-blue-600 text-white",
+    icon: SWR,
+  },
+  VITE: {
+    name: "Vite",
+    class: "bg-blue-600 text-white",
+    icon: Vite,
+  },
+};
+
 const PROJECTS = [
   {
-    title: 'Pablo San - Administrador de prestamos personales',
-    description: 'Administrado de prestamos, donde cada el cliente tiene la facilidad de consultar el estado de prestamo',
-    link: 'https://pablosan.com',
-    github: '',
-    image: '/pablosan.png',
-    tags: []
-  }
-]
+    title: "Pablo San - Administrador de prestamos personales",
+    description:
+      "Administrado de prestamos, donde cada el cliente tiene la facilidad de consultar el estado de prestamo",
+    link: "https://pablosan.com",
+    github: "",
+    image: "/pablosan.png",
+    tagsFrontend: [TAGS.React, TAGS.MATERIAL, TAGS.SWR, TAGS.VITE],
+    tagsBackend: [TAGS.NODE, TAGS.EXPRESS, TAGS.Sequelize, TAGS.JWT],
+  },
+];
 ---
-<div>
 
+<div class="mx-auto max-w-6xl px-6 flex justify-center">
+  {
+    PROJECTS.map(
+      ({
+        title,
+        description,
+        link,
+        github,
+        image,
+        tagsBackend,
+        tagsFrontend,
+      }) => (
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+          <div class="w-full md:w-1/2">
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+              <img
+                alt="Recién llegado vs 5 años en Nueva Zelanda"
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/2 md:max-w-lg">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+              {title}
+            </h3>
+            <div class="flex flex-wrap mt-2">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tagsFrontend.map((tag) => (
+                  <li>
+                    <span
+                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    >
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tagsBackend.map((tag) => (
+                  <li>
+                    <span
+                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    >
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-2 text-gray-700 dark:text-gray-400">
+                {description}
+              </div>
+              <footer class="flex items-end justify-start mt-4 gap-x-4">
+                <a href={link}>
+                  Preview
+                </a>
+              </footer>
+            </div>
+          </div>
+        </article>
+      ),
+    )
+  }
 </div>
