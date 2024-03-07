@@ -62,6 +62,14 @@ const navItems = [
             }
           })
         }
+
+        if (!entry.isIntersecting) {
+          const firstEntry = entry.target.id === 'experiencia'
+          const containsColor = navItems.item(0).classList.contains('text-blue-600')
+          if (firstEntry && containsColor) {
+            navItems.item(0).classList.remove('text-blue-600')
+          }
+        }
       });
     };
 

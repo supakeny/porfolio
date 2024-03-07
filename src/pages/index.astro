@@ -1,25 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../sections/Hero.astro";
+import Experience from "../sections/Experience.astro"
+import Proyectos from "../sections/Proyectos.astro"
 ---
 
 <Layout
 	title="Porfolio de Kennedy - Desarrollador web con 3 años de experiencia"
 	description="TODO"
 >
-	<main class="px-4">
+	<main class="space-y-24 flex flex-col w-full">
 		<Hero />
 
 		<section id="experiencia" class="h-screen">
-			<h1>Hola Experiencia</h1>
+			<Experience />
 		</section>
 
 		<section id="proyectos" class="h-screen">
-			<h1>Hola Proyectos</h1>
+			<Proyectos />
 		</section>
-
 		<section id="sobre-mi" class="h-screen">
-			<h1>Hola Sobre mí</h1>
+			<h1>Hola Sobre mi</h1>
 		</section>
 	</main>
 </Layout>

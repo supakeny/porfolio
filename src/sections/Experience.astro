@@ -1,0 +1,31 @@
+---
+import BgColor from "../components/BgColor.astro";
+import TimeLine from "../components/TimeLine.astro";
+import CardExperience from "../components/CardExperience.astro";
+---
+
+<div class="mt-2 sm:mt-8 mb-3 px-6 lg:px-8">
+  <div class="mx-auto max-w-2xl sm:text-center">
+    <h2 class="font-bold text-3xl text-gray-900 sm:text-5xl dark:text-gray-200">
+      Mi trayectoria <span class="text-blue-600">profesional</span>
+    </h2>
+  </div>
+</div>
+
+<div class="mx-auto max-w-6xl px-6 flex justify-center">
+  <div class="flow-root w-full">
+    <ol
+      class="grid justify-between grid-cols-2 gap-3 mx-auto my-12 md:grid-cols-4 md:gap-6"
+    >
+      <CardExperience title="+ 3" description="Años de experiencia" />
+      <CardExperience title="1" description="Cliente satisfecho" />
+      <CardExperience title="1" description="Proyecto finalizado" />
+      <CardExperience title="0" description="Proyecto en curso" />
+    </ol>
+    <BgColor>
+      <div class="mx-auto max-w-6xl pl-2 flex flex-col justify-center items-center">
+        <TimeLine />
+      </div>
+    </BgColor>
+  </div>
+</div>
