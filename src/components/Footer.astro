@@ -10,9 +10,7 @@ const currentYear = new Date().getFullYear();
   >
     <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
       >© {currentYear}
-      <a href="http://localhost:4321" class="hover:underline"
-        >Kennedy Almonte P</a
-      >.
+      <a href="#" id="top-link" class="hover:underline">Kennedy Almonte P</a>.
     </span>
     <ul
       class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
@@ -30,3 +28,17 @@ const currentYear = new Date().getFullYear();
     </ul>
   </div>
 </footer>
+
+<script is:inline>
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const topLink = document.getElementById("top-link");
+    if (topLink) {
+      topLink.addEventListener("click", scrollToTop);
+    }
+  });
+</script>
